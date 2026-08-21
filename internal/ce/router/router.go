@@ -3,11 +3,10 @@ package router
 import (
 	"net/http"
 
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/auth"
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/handlers"
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/middleware"
-
-	sharedUtils "github.com/OpenNDX/openndx-core/exchange/shared/utils"
+	"github.com/openndx/openndx-core/internal/ce/auth"
+	"github.com/openndx/openndx-core/internal/ce/handlers"
+	"github.com/openndx/openndx-core/internal/ce/middleware"
+	"github.com/openndx/openndx-core/internal/utils"
 )
 
 // V1Router handles all V1 API route registration
@@ -43,27 +42,27 @@ func (r *V1Router) RegisterRoutes(mux *http.ServeMux) {
 func (r *V1Router) registerInternalRoutes(mux *http.ServeMux) {
 	// Health check
 	mux.Handle("/internal/api/v1/health",
-		sharedUtils.PanicRecoveryMiddleware(http.HandlerFunc(r.internalHandler.HealthCheck)))
+		utils.PanicRecoveryMiddleware(http.HandlerFunc(r.internalHandler.HealthCheck)))
 
 	// Consents endpoint
 	mux.Handle("GET /internal/api/v1/consents",
-		sharedUtils.PanicRecoveryMiddleware(http.HandlerFunc(r.internalHandler.GetConsent)))
+		utils.PanicRecoveryMiddleware(http.HandlerFunc(r.internalHandler.GetConsent)))
 	mux.Handle("POST /internal/api/v1/consents",
-		sharedUtils.PanicRecoveryMiddleware(http.HandlerFunc(r.internalHandler.CreateConsent)))
+		utils.PanicRecoveryMiddleware(http.HandlerFunc(r.internalHandler.CreateConsent)))
 }
 
 // registerPortalRoutes registers portal API routes (authentication required for protected endpoints)
 func (r *V1Router) registerPortalRoutes(mux *http.ServeMux) {
 	// Health check endpoint (public - no authentication per OpenAPI spec)
 	mux.Handle("/api/v1/health",
-		sharedUtils.PanicRecoveryMiddleware(http.HandlerFunc(r.portalHandler.HealthCheck)))
+		utils.PanicRecoveryMiddleware(http.HandlerFunc(r.portalHandler.HealthCheck)))
 
 	// Consent endpoints (authentication required)
 	mux.Handle("GET /api/v1/consents/{consentId}",
-		sharedUtils.PanicRecoveryMiddleware(
+		utils.PanicRecoveryMiddleware(
 			r.authMiddleware.Authenticate(http.HandlerFunc(r.portalHandler.GetConsent))))
 	mux.Handle("PUT /api/v1/consents/{consentId}",
-		sharedUtils.PanicRecoveryMiddleware(
+		utils.PanicRecoveryMiddleware(
 			r.authMiddleware.Authenticate(http.HandlerFunc(r.portalHandler.UpdateConsent))))
 }
 

@@ -5,7 +5,7 @@ import (
 	"log/slog"
 	"net/http"
 
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/models"
+	"github.com/openndx/openndx-core/internal/ce/models"
 )
 
 // ErrorResponse represents a standardized error response

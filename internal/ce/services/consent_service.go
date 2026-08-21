@@ -7,8 +7,8 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/models"
 	"github.com/google/uuid"
+	"github.com/openndx/openndx-core/internal/ce/models"
 	"gorm.io/gorm"
 )
 

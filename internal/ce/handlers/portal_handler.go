@@ -7,11 +7,11 @@ import (
 	"log/slog"
 	"net/http"
 
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/middleware"
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/models"
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/services"
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/utils"
 	"github.com/google/uuid"
+	"github.com/openndx/openndx-core/internal/ce/middleware"
+	"github.com/openndx/openndx-core/internal/ce/models"
+	"github.com/openndx/openndx-core/internal/ce/services"
+	"github.com/openndx/openndx-core/internal/ce/utils"
 )
 
 // PortalHandler handles external API requests (authentication required)

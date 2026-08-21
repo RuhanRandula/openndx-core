@@ -7,9 +7,9 @@ import (
 	"log/slog"
 	"net/http"
 
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/models"
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/services"
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/utils"
+	"github.com/openndx/openndx-core/internal/ce/models"
+	"github.com/openndx/openndx-core/internal/ce/services"
+	"github.com/openndx/openndx-core/internal/ce/utils"
 )
 
 // InternalHandler handles internal API requests (no authentication required)

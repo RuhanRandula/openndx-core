@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/auth"
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/models"
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/utils"
+	"github.com/openndx/openndx-core/internal/ce/auth"
+	"github.com/openndx/openndx-core/internal/ce/models"
+	"github.com/openndx/openndx-core/internal/ce/utils"
 )
 
 // contextKey is a custom type for context keys used with context.WithValue.

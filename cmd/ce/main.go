@@ -6,16 +6,16 @@ import (
 	"os"
 	"time"
 
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/config"
-	"github.com/OpenNDX/openndx-core/exchange/shared/monitoring"
-	"github.com/OpenNDX/openndx-core/exchange/shared/utils"
+	"github.com/openndx/openndx-core/internal/ce/config"
+	"github.com/openndx/openndx-core/internal/monitoring"
+	"github.com/openndx/openndx-core/internal/utils"
 
 	// V1 API imports
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/auth"
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/database"
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/handlers"
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/router"
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/services"
+	"github.com/openndx/openndx-core/internal/ce/auth"
+	"github.com/openndx/openndx-core/internal/ce/database"
+	"github.com/openndx/openndx-core/internal/ce/handlers"
+	"github.com/openndx/openndx-core/internal/ce/router"
+	"github.com/openndx/openndx-core/internal/ce/services"
 )
 
 // Build information - set during build

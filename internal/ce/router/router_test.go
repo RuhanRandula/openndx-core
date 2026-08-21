@@ -5,8 +5,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/auth"
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/handlers"
+	"github.com/openndx/openndx-core/internal/ce/auth"
+	"github.com/openndx/openndx-core/internal/ce/handlers"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -6,7 +6,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/models"
+	"github.com/openndx/openndx-core/internal/ce/models"
 	"github.com/stretchr/testify/assert"
 )
 

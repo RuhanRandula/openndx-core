@@ -5,11 +5,11 @@ Manages data owner consent workflows for data access requests. Provides JWT-auth
 ## Quick Start
 
 ```bash
-# Run locally
-go run main.go
+# Run locally (from the repo root)
+go run ./cmd/ce
 
 # Or build and run
-go build -o consent-engine && ./consent-engine
+go build -o ce ./cmd/ce && ./ce
 ```
 
 Service runs on port **8081** by default.
@@ -63,14 +63,15 @@ Service runs on port **8081** by default.
 ## Testing
 
 ```bash
-go test ./...
+# From the repo root
+go test ./cmd/ce/... ./internal/ce/... -count=1
 ```
 
 ## Docker
 
 ```bash
-# Build from monorepo root
-docker build -t consent-engine -f exchange/consent-engine/Dockerfile .
+# Build from the repo root
+docker build -t consent-engine -f cmd/ce/Dockerfile .
 
 # Run
 docker run -p 8081:8081 --env-file .env consent-engine

@@ -7,8 +7,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/config"
-	"github.com/OpenNDX/openndx-core/exchange/consent-engine/internal/models"
+	"github.com/openndx/openndx-core/internal/ce/config"
+	"github.com/openndx/openndx-core/internal/ce/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"

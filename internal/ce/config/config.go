@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/OpenNDX/openndx-core/exchange/shared/utils"
+	"github.com/openndx/openndx-core/internal/utils"
 )
 
 // Config holds all configuration for a service
